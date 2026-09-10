@@ -1,0 +1,804 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Portfolio | Nitcha Romphokaew</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:Arial, sans-serif;
+    background:#070b14;
+    color:white;
+    line-height:1.7;
+}
+
+/* ===== NAVBAR ===== */
+
+nav{
+    position:fixed;
+    top:0;
+    width:100%;
+    z-index:1000;
+    background:rgba(7,11,20,0.85);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid #203047;
+}
+
+.nav-container{
+    max-width:1100px;
+    margin:auto;
+    padding:18px 25px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.logo{
+    color:#00e5ff;
+    font-size:22px;
+    font-weight:bold;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    margin-left:22px;
+    transition:.3s;
+}
+
+nav a:hover{
+    color:#00e5ff;
+}
+
+/* ===== HERO ===== */
+
+.hero{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:100px 25px 50px;
+
+    background:
+    radial-gradient(circle at 50% 20%,#164b70,transparent 35%),
+    #070b14;
+}
+
+.hero-content{
+    max-width:850px;
+}
+
+.hero-image{
+    width:170px;
+    height:170px;
+    object-fit:cover;
+    border-radius:50%;
+    border:4px solid #00e5ff;
+    box-shadow:0 0 40px rgba(0,229,255,.4);
+    margin-bottom:25px;
+}
+
+.small-title{
+    color:#00e5ff;
+    letter-spacing:4px;
+    font-size:15px;
+    margin-bottom:15px;
+}
+
+.hero h1{
+    font-size:58px;
+    line-height:1.2;
+    margin-bottom:20px;
+}
+
+.hero h1 span{
+    color:#00e5ff;
+}
+
+.hero p{
+    color:#aebed0;
+    font-size:19px;
+    margin-bottom:30px;
+}
+
+.btn{
+    display:inline-block;
+    padding:12px 28px;
+    border:1px solid #00e5ff;
+    border-radius:30px;
+    color:#00e5ff;
+    text-decoration:none;
+    transition:.3s;
+}
+
+.btn:hover{
+    background:#00e5ff;
+    color:#070b14;
+    box-shadow:0 0 25px rgba(0,229,255,.4);
+}
+
+/* ===== GENERAL ===== */
+
+section{
+    max-width:1100px;
+    margin:auto;
+    padding:100px 25px;
+}
+
+.section-number{
+    color:#00e5ff;
+    letter-spacing:3px;
+    font-size:14px;
+}
+
+.section-title{
+    font-size:40px;
+    margin:10px 0 40px;
+}
+
+/* ===== ABOUT ===== */
+
+.about{
+    display:grid;
+    grid-template-columns:1fr 1.5fr;
+    gap:40px;
+    align-items:center;
+}
+
+.about-image{
+    width:100%;
+    max-width:400px;
+    border-radius:20px;
+    border:1px solid #263b55;
+}
+
+.about-text{
+    color:#b9c8d8;
+    font-size:17px;
+}
+
+.about-text strong{
+    color:white;
+}
+
+/* ===== CARDS ===== */
+
+.card-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:25px;
+}
+
+.card{
+    background:#101827;
+    border:1px solid #23364f;
+    border-radius:18px;
+    overflow:hidden;
+    transition:.3s;
+}
+
+.card:hover{
+    transform:translateY(-8px);
+    border-color:#00e5ff;
+    box-shadow:0 10px 35px rgba(0,229,255,.12);
+}
+
+.card img{
+    width:100%;
+    height:210px;
+    object-fit:cover;
+}
+
+.card-content{
+    padding:25px;
+}
+
+.card h3{
+    color:#00e5ff;
+    margin-bottom:10px;
+}
+
+.card p{
+    color:#aebed0;
+}
+
+/* ===== SKILLS ===== */
+
+.skills{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(170px,1fr));
+    gap:15px;
+}
+
+.skill{
+    background:#101827;
+    border:1px solid #23364f;
+    border-radius:15px;
+    padding:25px;
+    text-align:center;
+    transition:.3s;
+}
+
+.skill:hover{
+    border-color:#00e5ff;
+    transform:translateY(-5px);
+}
+
+.skill-icon{
+    font-size:35px;
+    margin-bottom:10px;
+}
+
+/* ===== TIMELINE ===== */
+
+.timeline{
+    border-left:2px solid #00e5ff;
+    padding-left:30px;
+}
+
+.timeline-item{
+    margin-bottom:35px;
+}
+
+.timeline-item h3{
+    color:#00e5ff;
+}
+
+.timeline-item p{
+    color:#aebed0;
+}
+
+/* ===== CONTACT ===== */
+
+.contact{
+    text-align:center;
+    background:#0d1523;
+    border:1px solid #203047;
+    border-radius:25px;
+    padding:60px 25px;
+}
+
+.contact p{
+    color:#aebed0;
+    margin:15px 0 25px;
+}
+
+/* ===== FOOTER ===== */
+
+footer{
+    text-align:center;
+    padding:35px;
+    border-top:1px solid #203047;
+    color:#718398;
+}
+
+/* ===== MOBILE ===== */
+
+@media(max-width:700px){
+
+    nav a{
+        display:none;
+    }
+
+    .hero h1{
+        font-size:40px;
+    }
+
+    .hero-image{
+        width:140px;
+        height:140px;
+    }
+
+    .about{
+        grid-template-columns:1fr;
+    }
+
+    .about-image{
+        margin:auto;
+        display:block;
+    }
+
+    .section-title{
+        font-size:32px;
+    }
+
+}
+
+</style>
+</head>
+
+
+<body>
+
+<!-- ===== NAVBAR ===== -->
+
+<nav>
+    <div class="nav-container">
+
+        <div class="logo">
+            MOJI.PORTFOLIO
+        </div>
+
+        <div>
+            <a href="#about">About</a>
+            <a href="#education">Education</a>
+            <a href="#skills">Skills</a>
+            <a href="#activities">Activities</a>
+            <a href="#certificates">Certificates</a>
+            <a href="#contact">Contact</a>
+        </div>
+
+    </div>
+</nav>
+
+
+<!-- ===== HERO ===== -->
+
+<header class="hero">
+
+    <div class="hero-content">
+
+        <!-- รูปโปรไฟล์ -->
+        <img
+            src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=500"
+            class="hero-image"
+            alt="Profile">
+
+        <div class="small-title">
+            WELCOME TO MY PORTFOLIO
+        </div>
+
+        <h1>
+            Hello, I'm<br>
+            <span>ณิชชา ร่มโพธิ์แก้ว</span>
+        </h1>
+
+        <p>
+            Student • Technology • Creative • Future Developer
+        </p>
+
+        <a href="#about" class="btn">
+            Explore My Portfolio →
+        </a>
+
+    </div>
+
+</header>
+
+
+<!-- ===== ABOUT ===== -->
+
+<section id="about">
+
+    <div class="section-number">
+        01 / ABOUT ME
+    </div>
+
+    <h2 class="section-title">
+        About Me
+    </h2>
+
+    <div class="about">
+
+        <div>
+            <img
+                src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=700"
+                class="about-image"
+                alt="About me">
+        </div>
+
+        <div class="about-text">
+
+            <p>
+                สวัสดีค่ะ ดิฉันชื่อ
+                <strong>นางสาวณิชชา ร่มโพธิ์แก้ว</strong>
+            </p>
+
+            <br>
+
+            <p>
+                ชื่อเล่น <strong>โมจิ</strong>
+                ปัจจุบันกำลังศึกษาอยู่ระดับมัธยมศึกษาตอนปลาย
+            </p>
+
+            <br>
+
+            <p>
+                เป็นคนที่สนใจด้านเทคโนโลยี
+                การออกแบบ และการเรียนรู้สิ่งใหม่ ๆ
+                พร้อมพัฒนาทักษะของตัวเอง
+                และนำความรู้ไปสร้างผลงานที่มีประโยชน์
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ===== EDUCATION ===== -->
+
+<section id="education">
+
+    <div class="section-number">
+        02 / EDUCATION
+    </div>
+
+    <h2 class="section-title">
+        Education
+    </h2>
+
+    <div class="timeline">
+
+        <div class="timeline-item">
+
+            <h3>
+                High School
+            </h3>
+
+            <p>
+                โรงเรียนบ้านบึงอุตสาหกรรม
+            </p>
+
+            <p>
+                ระดับมัธยมศึกษาตอนปลาย
+            </p>
+
+        </div>
+
+        <div class="timeline-item">
+
+            <h3>
+                My Future
+            </h3>
+
+            <p>
+                สนใจศึกษาต่อในสายเทคโนโลยี
+                และพัฒนาทักษะด้านดิจิทัล
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ===== SKILLS ===== -->
+
+<section id="skills">
+
+    <div class="section-number">
+        03 / SKILLS
+    </div>
+
+    <h2 class="section-title">
+        My Skills
+    </h2>
+
+    <div class="skills">
+
+        <div class="skill">
+            <div class="skill-icon">💻</div>
+            HTML
+        </div>
+
+        <div class="skill">
+            <div class="skill-icon">🎨</div>
+            Creative Design
+        </div>
+
+        <div class="skill">
+            <div class="skill-icon">⚡</div>
+            Technology
+        </div>
+
+        <div class="skill">
+            <div class="skill-icon">🧠</div>
+            Problem Solving
+        </div>
+
+        <div class="skill">
+            <div class="skill-icon">🤝</div>
+            Teamwork
+        </div>
+
+        <div class="skill">
+            <div class="skill-icon">🚀</div>
+            Self Development
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ===== ACTIVITIES ===== -->
+
+<section id="activities">
+
+    <div class="section-number">
+        04 / ACTIVITIES
+    </div>
+
+    <h2 class="section-title">
+        Activities & Works
+    </h2>
+
+    <div class="card-grid">
+
+
+        <div class="card">
+
+            <img
+                src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=800"
+                alt="Technology">
+
+            <div class="card-content">
+
+                <h3>
+                    Technology Activity
+                </h3>
+
+                <p>
+                    กิจกรรมที่เกี่ยวข้องกับเทคโนโลยี
+                    และการเรียนรู้ทักษะใหม่ ๆ
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="card">
+
+            <img
+                src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=800"
+                alt="Teamwork">
+
+            <div class="card-content">
+
+                <h3>
+                    Teamwork
+                </h3>
+
+                <p>
+                    การทำงานร่วมกับผู้อื่น
+                    และการแลกเปลี่ยนความคิดเห็น
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="card">
+
+            <img
+                src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=800"
+                alt="Learning">
+
+            <div class="card-content">
+
+                <h3>
+                    Learning
+                </h3>
+
+                <p>
+                    ประสบการณ์จากกิจกรรม
+                    และการเรียนรู้สิ่งใหม่ ๆ
+                </p>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+<!-- ===== CERTIFICATES ===== -->
+
+<section id="certificates">
+
+    <div class="section-number">
+        05 / CERTIFICATES
+    </div>
+
+    <h2 class="section-title">
+        Certificates
+    </h2>
+
+    <div class="card-grid">
+
+
+        <div class="card">
+
+            <img
+                src="https://images.unsplash.com/photo-1589330694653-ded6df03f754?w=800"
+                alt="Certificate">
+
+            <div class="card-content">
+
+                <h3>
+                    Certificate 01
+                </h3>
+
+                <p>
+                    ใส่ชื่อเกียรติบัตร
+                    และรายละเอียดกิจกรรมตรงนี้
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="card">
+
+            <img
+                src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=800"
+                alt="Certificate">
+
+            <div class="card-content">
+
+                <h3>
+                    Certificate 02
+                </h3>
+
+                <p>
+                    ใส่ชื่อเกียรติบัตร
+                    และรายละเอียดกิจกรรมตรงนี้
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="card">
+
+            <img
+                src="https://images.unsplash.com/photo-1565688534245-05d6b5be184a?w=800"
+                alt="Certificate">
+
+            <div class="card-content">
+
+                <h3>
+                    Certificate 03
+                </h3>
+
+                <p>
+                    ใส่ชื่อเกียรติบัตร
+                    และรายละเอียดกิจกรรมตรงนี้
+                </p>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+<!-- ===== PROJECTS ===== -->
+
+<section>
+
+    <div class="section-number">
+        06 / PROJECTS
+    </div>
+
+    <h2 class="section-title">
+        My Projects
+    </h2>
+
+    <div class="card-grid">
+
+
+        <div class="card">
+
+            <img
+                src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800"
+                alt="Coding project">
+
+            <div class="card-content">
+
+                <h3>
+                    Portfolio Website
+                </h3>
+
+                <p>
+                    เว็บไซต์ Portfolio
+                    ที่สร้างด้วย HTML และ CSS
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="card">
+
+            <img
+                src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800"
+                alt="Data project">
+
+            <div class="card-content">
+
+                <h3>
+                    Future Project
+                </h3>
+
+                <p>
+                    พื้นที่สำหรับเพิ่มผลงาน
+                    หรือโปรเจกต์ในอนาคต
+                </p>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+<!-- ===== CONTACT ===== -->
+
+<section id="contact">
+
+    <div class="contact">
+
+        <div class="section-number">
+            07 / CONTACT
+        </div>
+
+        <h2 class="section-title">
+            Let's Connect
+        </h2>
+
+        <p>
+            ขอบคุณที่เข้ามาเยี่ยมชม Portfolio ของฉัน
+        </p>
+
+        <a href="mailto:ใส่อีเมลของคุณ@email.com"
+           class="btn">
+            Contact Me
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- ===== FOOTER ===== -->
+
+<footer>
+
+    © 2026 Nitcha Romphokaew
+    <br>
+    My Personal Portfolio
+
+</footer>
+
+
+</body>
+</html>
