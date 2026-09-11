@@ -217,8 +217,8 @@ section{
 
 .skills{
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(170px,1fr));
-    gap:15px;
+    grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+    gap:20px;
 }
 
 .skill{
@@ -233,6 +233,14 @@ section{
 .skill:hover{
     border-color:#00e5ff;
     transform:translateY(-5px);
+}
+
+.skill img{
+    width:100%;
+    max-height:150px;
+    object-fit:cover;
+    border-radius:10px;
+    margin-bottom:12px;
 }
 
 .skill-icon{
@@ -348,7 +356,7 @@ footer{
 
     <div class="hero-content">
 
-        <!-- รูปโปรไฟล์ -->
+        <!-- รูปโปรไฟล์หน้าแรก -->
         <img
             src="1789091506435.jpg"
             class="hero-image"
@@ -392,8 +400,9 @@ footer{
     <div class="about">
 
         <div>
+            <!-- รูปส่วน About Me -->
             <img
-                src="1789091506435.jpg"
+                src="1788062854553.jpg"
                 class="about-image"
                 alt="About me">
         </div>
@@ -491,33 +500,13 @@ footer{
     <div class="skills">
 
         <div class="skill">
-            <div class="skill-icon">💻</div>
-            HTML
-        </div>
-
-        <div class="skill">
-            <div class="skill-icon">🎨</div>
-            Creative Design
-        </div>
-
-        <div class="skill">
-            <div class="skill-icon">⚡</div>
-            Technology
-        </div>
-
-        <div class="skill">
-            <div class="skill-icon">🧠</div>
-            Problem Solving
+            <img src="1789042067430.jpg" alt="Technology">
+            <div>Technology</div>
         </div>
 
         <div class="skill">
             <div class="skill-icon">🤝</div>
-            Teamwork
-        </div>
-
-        <div class="skill">
-            <div class="skill-icon">🚀</div>
-            Self Development
+            <div>Teamwork</div>
         </div>
 
     </div>
@@ -802,4 +791,3 @@ footer{
 
 </body>
 </html>
-
